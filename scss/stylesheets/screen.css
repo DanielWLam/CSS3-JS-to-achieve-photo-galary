@@ -1,0 +1,259 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+* In this file you should write your main styles. (or centralize your imports)
+* Import this file using the following HTML or equivalent:
+* <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, D:/Program Files/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, D:/Program Files/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, D:/Program Files/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, D:/Program Files/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, D:/Program Files/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, D:/Program Files/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, D:/Program Files/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, D:/Program Files/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, D:/Program Files/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 7, ../sass/screen.scss */
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: "微软雅黑";
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 14, ../sass/screen.scss */
+.wrap {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  margin-top: -300px;
+  background-color: #333;
+  overflow: hidden;
+  /* 使其子元素支持3D效果 */
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+}
+
+/* 海报样式 */
+/* line 28, ../sass/screen.scss */
+.photo {
+  height: 320px;
+  width: 260px;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
+  -webkit-transition: all .6s;
+  -moz-transition: all .6s;
+}
+
+/* line 38, ../sass/screen.scss */
+.photo .side {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* line 50, ../sass/screen.scss */
+.photo .side_front .image {
+  width: 100%;
+  height: 250px;
+  line-height: 250px;
+  overflow: hidden;
+}
+
+/* line 56, ../sass/screen.scss */
+.photo .side_front .image img {
+  width: 100%;
+}
+
+/* line 59, ../sass/screen.scss */
+.photo .side_front .caption {
+  text-align: center;
+  font-size: 16px;
+  line-height: 50px;
+}
+
+/* line 67, ../sass/screen.scss */
+.photo .side_back .desc {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+/* 当前海报选中的样式(水平，垂直居中) */
+/* line 74, ../sass/screen.scss */
+.photo_center {
+  left: 50%;
+  top: 50%;
+  margin: -160px 0 0 -130px;
+  z-index: 999;
+}
+
+/*负责翻转*/
+/* line 81, ../sass/screen.scss */
+.photo_wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: all .6s ease-in-out;
+}
+
+/* line 90, ../sass/screen.scss */
+.photo_wrap .side_front {
+  -webkit-transform: rotateY(0deg);
+  -webkit-transition: all .6s ease-in-out;
+}
+
+/* line 94, ../sass/screen.scss */
+.photo_wrap .side_back {
+  -webkit-transform: rotateY(180deg);
+  -webkit-transition: all .6s ease-in-out;
+}
+
+/* line 98, ../sass/screen.scss */
+.photo_wrap .side {
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* line 111, ../sass/screen.scss */
+.nav {
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  left: 10%;
+  bottom: 20px;
+  z-index: 999;
+  background-color: #fff;
+  text-align: center;
+}
+
+/* line 123, ../sass/screen.scss */
+.nav .i {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #aaa;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-transform: scale(0.48);
+  -webkit-transition: all .5s;
+}
+
+/* line 135, ../sass/screen.scss */
+.nav .i:after {
+  content: "";
+  font-family: 'icons';
+  font-size: 80%;
+  display: inline-block;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+}
+
+/* line 145, ../sass/screen.scss */
+.nav .i_current {
+  -webkit-transform: scale(1);
+}
+
+/* line 148, ../sass/screen.scss */
+.nav .i_current:after {
+  opacity: 1;
+}
+
+/* line 151, ../sass/screen.scss */
+.nav .i_back {
+  -webkit-transform: rotateY(-180deg);
+  background-color: #555;
+}
+
+@font-face {
+  font-family: 'icons';
+  src: url(icon.woff) format("woff");
+  font-weight: normal;
+  font-size: normal;
+}
+
+
+.photo{
+	left: 50%;
+			top: 50%;
+			margin: -160px 0 0 -130px;
+}
+
+.photo_wrap{
+	-webkit-transform-origin:0%,50%;
+
+}
+.photo_front .photo_wrap{
+	-webkit-transform:translate(0px , 0px) rotateY(0deg);
+}
+.photo_back .photo_wrap{
+	-webkit-transform:translate(200px , 0px) rotateY(180deg);
+}
